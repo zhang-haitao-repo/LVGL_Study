@@ -76,3 +76,18 @@ lv_obj_get_y(obj);		// 获取y轴坐标位置
 
 ### 五、 盒子的样式(Style)
 
+
+
+## LVGL复杂应用
+### 圆弧的应用(arc)
+相关api函数：
+```c
+void lv_style_set_arc_width(lv_style_t * style, lv_coord_t value);      //设置圆弧样式的宽度
+void lv_style_set_arc_rounded(lv_style_t * style, lv_coord_t value);    //设置圆弧样式的末端圆形
+void lv_style_set_arc_color(lv_style_t * style, lv_color_t value);      //设置圆弧样式的颜色
+void lv_style_set_arc_color_filtered(lv_style_t * style, lv_color_t value);	//设置弧样式的颜色滤色
+void lv_style_set_arc_opa(lv_style_t * style, lv_opa_t value);      	//设置圆弧样式的透明度
+void lv_style_set_arc_img_src(lv_style_t * style, const void * value);	//设置圆弧图片资源
+void lv_arc_set_angles(lv_obj_t * arc, uint16_t start, uint16_t end);	//设置圆弧的角度范围
+
+```

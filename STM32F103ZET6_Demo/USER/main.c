@@ -81,8 +81,38 @@ void TIM4_IRQHandler(void)
 	TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 }
 
+int i = 0;
+lv_obj_t *obj;
+lv_obj_t *arc;
+
+void lv_demo()
+{
+	
+    static lv_style_t style;
+    
+		obj = lv_obj_create(lv_scr_act());
+		arc = lv_arc_create(obj);
+
+    
+    lv_obj_set_size(obj, 220, 220);
+
+    lv_style_init(&style);
+    lv_style_set_arc_color(&style, lv_palette_main(LV_PALETTE_RED));
+    lv_style_set_arc_width(&style, 4);
+
+    lv_obj_set_size(arc, 190, 190);
+
+
+    lv_obj_add_style(arc, &style, 0);
+
+    lv_obj_center(obj);
+    lv_obj_center(arc);
+
+}
+
 int main(void)
 {
+	int j = 0;
 	delay_init();
 	LED_Init();//LED≥ı ºªØ
 	TIM4_Init(999,71);
@@ -92,7 +122,7 @@ int main(void)
 	
 	lv_init();
 	lv_port_disp_init();
-	lv_example_meter_1();
+	lv_demo();
 	while(1)
 	{
 		lv_timer_handler();
