@@ -211,6 +211,23 @@
 "..\obj\lv_example_meter_2.o"
 "..\obj\lv_example_meter_4.o"
 "..\obj\lv_example_get_started_1.o"
+"..\obj\animimg001.o"
+"..\obj\animimg002.o"
+"..\obj\animimg003.o"
+"..\obj\img_caret_down.o"
+"..\obj\img_cogwheel_alpha16.o"
+"..\obj\img_cogwheel_argb.o"
+"..\obj\img_cogwheel_chroma_keyed.o"
+"..\obj\img_cogwheel_indexed16.o"
+"..\obj\img_cogwheel_rgb.o"
+"..\obj\img_hand.o"
+"..\obj\img_skew_strip.o"
+"..\obj\img_star.o"
+"..\obj\imgbtn_left.o"
+"..\obj\imgbtn_mid.o"
+"..\obj\imgbtn_right.o"
+"..\obj\leimu.o"
+"..\obj\leimu_1.o"
 --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\LCD.map" -o ..\OBJ\LCD.axf

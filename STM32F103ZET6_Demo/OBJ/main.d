@@ -16,8 +16,6 @@
 ..\obj\main.o: ..\HARDWARE\LED\led.h
 ..\obj\main.o: ..\HARDWARE\LCD\lcd_init.h
 ..\obj\main.o: ..\HARDWARE\LCD\lcd.h
-..\obj\main.o: ..\HARDWARE\LCD\pic.h
-..\obj\main.o: ..\GUI\examples\porting\lv_port_disp.h
 ..\obj\main.o: ..\GUI\src\lvgl.h
 ..\obj\main.o: ..\GUI\src\../lvgl.h
 ..\obj\main.o: ..\GUI\src\../src/misc/lv_log.h
@@ -141,6 +139,8 @@
 ..\obj\main.o: ..\GUI\src\../src/extra/libs/freetype/lv_freetype.h
 ..\obj\main.o: ..\GUI\src\../src/extra/libs/rlottie/lv_rlottie.h
 ..\obj\main.o: ..\GUI\src\../src/extra/libs/ffmpeg/lv_ffmpeg.h
+..\obj\main.o: ..\HARDWARE\LCD\pic.h
+..\obj\main.o: ..\GUI\examples\porting\lv_port_disp.h
 ..\obj\main.o: ..\GUI\lv_examples.h
 ..\obj\main.o: ..\GUI\examples\styles/lv_example_style.h
 ..\obj\main.o: ..\GUI\examples\get_started/lv_example_get_started.h

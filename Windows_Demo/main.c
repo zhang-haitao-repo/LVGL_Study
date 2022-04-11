@@ -43,6 +43,9 @@ void lv_demo()
 {
     static lv_style_t style;
     lv_obj_t *obj = lv_obj_create(lv_scr_act());
+    lv_group_t *g = lv_group_create();
+
+    lv_group_add_obj(g, obj);
 
     lv_obj_t *arc = lv_arc_create(obj);
     lv_obj_set_size(obj, 220, 220);
@@ -103,7 +106,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLi
     // lv_demo_widgets();
 
 
-    lv_demo();
+    lv_example_img_4();
 
     while(!lv_win32_quit_signal) {
         /* Periodically call the lv_task handler.

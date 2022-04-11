@@ -11,19 +11,32 @@
 								color       要填充的颜色
       返回值：  无
 ******************************************************************************/
-void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,u16 color)
+void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,lv_color_t * color)
 {          
 	u16 i,j; 
-	LCD_Address_Set(xsta,ysta,xend-1,yend-1);//设置显示范围
-	for(i=ysta;i<yend;i++)
+	LCD_Address_Set(xsta,ysta,xend,yend);//设置显示范围
+	for(i=ysta;i <= yend;i++)
 	{													   	 	
-		for(j=xsta;j<xend;j++)
+		for(j=xsta;j <= xend;j++)
 		{
-			LCD_WR_DATA(color);
+			LCD_WR_DATA(color->full);
+			color++;
 		}
 	} 					  	    
 }
 
+//void LCD_Fill(u16 xsta,u16 ysta,u16 xend,u16 yend,u16 color)
+//{          
+//	u16 i,j; 
+//	LCD_Address_Set(xsta, ysta, xend, yend);//设置显示范围
+//	for(i=ysta;i <= yend;i++)
+//	{													   	 	
+//		for(j=xsta;j <= xend;j++)
+//		{
+//			LCD_WR_DATA(color);
+//		}
+//	} 					  	    
+//}
 /******************************************************************************
       函数说明：在指定位置画点
       入口数据：x,y 画点坐标
