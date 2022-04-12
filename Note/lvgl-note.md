@@ -76,9 +76,66 @@ lv_obj_get_y(obj);		// 获取y轴坐标位置
 
 ### 五、 盒子的样式(Style)
 
+#### 样式的创建和应用
 
+```c
+static lv_style_t * style_obj;
+
+lv_style_set_bg_color(&style_obj, lv_color_hex(0x000000));	// 设置背景色
+lv_style_set_bg_opa(&style_obj, LV_OPA_50);	//设置背景透明度
+lv_style_set_...	// 设置其他属性
+
+lv_style_init(&style_obj);
+
+
+lv_obj_add_style(obj, &style_obj, 0);	// 添加样式到指定对象
+lv_obj_add_style(obj,,&style_obj, LV_STATE_PRESSED);	//在对象被按下时应用样式
+```
+
+获取样式属性：lv_obj_get_style_<property_name>(obj, <part>)	
+
+```c
+lv_color_t color = lv_obj_get_style_bg_color(obj,LV_PART_MAIN);	// 获取样式的背景颜色属性
+
+lv_obj_remove_style_all(obj);	// 删除对象所有样式
+```
+
+> 背景部分的属性：
+>
+> 背景：（Background）, 边界(Border), 轮廓(Outline), 阴影(Shadow), 填充(Padding), 宽度和高度变换， X和Y变换
+
+#### 样式的状态和部分
+
+状态State：(对象可处于以下状态组合)
+
+> LV_STATE_DEFAULT(0x0000) 正常，释放状态
+>
+> LV_STATE_CHECKED(0x0001) 切换或检查状态
+>
+> LV_STATE_FOCUSED(0x0002) 通过键盘或编码器聚焦或通过触摸板/鼠标点击
+>
+> LA_STATE_FOCUS_KEY(0x0004) 通过键盘或编码器聚焦，但不通过触摸板/鼠标点击
+>
+> LV_STATE_EDITED(0x0008) 由编码器编辑
+>
+> LV_STATE_PRESSED(0x0020) 被按下
+
+部分Part：(对象可以有多个部分，他们可以有自己的样式)
+
+> 例如：一个滑杆（Slider）包含三部分
+>
+> 背景、按钮、旋钮。
+>
+> 这意味着滑杆的三部分均可以有自己的样式。
+
+#### 过度特效
+
+默认情况下，当一个对象改变状态时，新的状态会立即设置。但是，通过转换，可以在状态更改时播放动画。
+
+例如：按下按钮时，其背景颜色可以在300毫秒内动画显示为按下的颜色。
 
 ## LVGL复杂应用
+
 ### 圆弧的应用(arc)
 相关api函数：
 ```c
